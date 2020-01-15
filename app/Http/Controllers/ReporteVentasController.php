@@ -13,6 +13,13 @@ class ReporteVentasController extends Controller
     //
     function index(){
     	$prospectos = Prospecto::all();
+    	$doce=Carbon::now()->modify('-12 months')->format('Y-m');
+    	$once=Carbon::now()->modify('-11 months')->format('Y-m');
+    	$diez=Carbon::now()->modify('-10 months')->format('Y-m');
+    	$nueve=Carbon::now()->modify('-9 months')->format('Y-m');
+    	$ocho=Carbon::now()->modify('-8 months')->format('Y-m');
+    	$siete=Carbon::now()->modify('-7 months')->format('Y-m');
+    	$seis=Carbon::now()->modify('-6 months')->format('Y-m');
     	$cinco=Carbon::now()->modify('-5 months')->format('Y-m');
     	$cuatro=Carbon::now()->modify('-4 months')->format('Y-m');
     	$tres=Carbon::now()->modify('-3 months')->format('Y-m');
@@ -32,7 +39,7 @@ class ReporteVentasController extends Controller
 	    			->get();
     	//dd($ventas);
 
-    	return view('pages.reporte_ventas', compact('ventas','prospectos','cinco','cuatro','tres','dos','uno','presente'));
+    	return view('pages.reporte_ventas', compact('ventas','prospectos','doce','once','diez','nueve','ocho','siete','seis','cinco','cuatro','tres','dos','uno','presente'));
 
     	
 
