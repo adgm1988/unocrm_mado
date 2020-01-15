@@ -4,7 +4,13 @@
       <li class="nav-item">
         <a class="nav-link" href="/dashboard">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Tablero</span>
+          <span>Tablero Prospectos</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/reporteventas">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Tablero Clientes</span>
         </a>
       </li>
       <li class="nav-item">

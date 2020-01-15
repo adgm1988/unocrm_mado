@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('','DashboardController@index')->middleware('auth');
 	Route::get('dashboard','DashboardController@index');
+	Route::get('reporteventas','ReporteVentasController@index');
 	Route::get('home',function(){
 		return redirect('/dashboard');
 	});
