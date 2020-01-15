@@ -21,7 +21,7 @@ class VentasController extends Controller
 
             $ventas = Venta::with('Prospecto')->whereHas('Prospecto', function($q){
                 $q->where('userid', auth::user()->id);
-            })->get();
+            })->orderBy('fecha', 'desc')->get();
 
             $prospectos = Prospecto::where('userid', auth::user()->id)->get();
         }else{
