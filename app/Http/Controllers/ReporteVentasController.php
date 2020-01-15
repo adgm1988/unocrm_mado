@@ -27,7 +27,7 @@ class ReporteVentasController extends Controller
 	    			->select('prospectos.id','prospectos.empresa', DB::raw('sum(ventas.monto) as monto'), DB::raw('DATE_FORMAT(ventas.fecha, "%Y-%m") as mes'))
 	    			->whereRaw('DATE_FORMAT(ventas.fecha, "%Y%m") >='.$semestre)
 	    			->groupby('id','empresa','mes')
-	    			->orderBy('id','asc')
+	    			->orderBy('empresa','asc')
 	    			->orderBy('mes','asc')
 	    			->get();
     	//dd($ventas);
