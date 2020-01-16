@@ -8,7 +8,6 @@
         </a>
       </li>
 
-
       @if(auth::user()->admin ==1 || auth::user()->consultor ==1)
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -21,12 +20,6 @@
         </div>
       </li>
       @endif
-
-
-
-
-
-
 
       @if(!auth::user()->vendedor ==1)
       <li class="nav-item">
