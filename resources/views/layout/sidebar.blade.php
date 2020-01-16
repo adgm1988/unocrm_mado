@@ -7,12 +7,14 @@
           <span>Tablero Prospectos</span>
         </a>
       </li>
+      @if(!auth::user()->vendedor ==1)
       <li class="nav-item">
         <a class="nav-link" href="/reporteventas">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Tablero Clientes</span>
         </a>
       </li>
+      @endif
       <li class="nav-item">
         <a class="nav-link" href="/calendar">
           <i class="fas fa-calendar-alt"></i>
