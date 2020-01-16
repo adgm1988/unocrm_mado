@@ -26,13 +26,13 @@ class ReporteVentasController extends Controller
     	$dos=Carbon::now()->modify('-2 months')->format('Y-m');
     	$uno=Carbon::now()->modify('-1 months')->format('Y-m');
     	$presente=Carbon::now()->format('Y-m');
-    	$semestre=Carbon::now()->modify('-5 months')->format('Ym');
+    	$anio=Carbon::now()->modify('-12 months')->format('Ym');
     	
   		//dd($semestre);
     	$ventas = DB::table('prospectos')
 	    			->join('ventas','prospectos.id','=','ventas._prospectoid')
 	    			->select('prospectos.id','prospectos.empresa', DB::raw('sum(ventas.monto) as monto'), DB::raw('DATE_FORMAT(ventas.fecha, "%Y-%m") as mes'))
-	    			->whereRaw('DATE_FORMAT(ventas.fecha, "%Y%m") >='.$semestre)
+	    			->whereRaw('DATE_FORMAT(ventas.fecha, "%Y%m") >='.$anio)
 	    			->groupby('id','empresa','mes')
 	    			->orderBy('empresa','asc')
 	    			->orderBy('mes','asc')
