@@ -16,19 +16,19 @@
 			<tr style="background-color:gray; color:white;">
 				<th>Empresa</th>
 				<!--<th>13 meses</th> ESTE LO QUITE PORQUE ME SUMABA TRECE MESES Y NO ES LO QUE QUERIAMOS-->
-				<th style="font-size:10px;">{{$doce}}</th>
-				<th style="font-size:10px;">{{$once}}</th>
-				<th style="font-size:10px;">{{$diez}}</th>
-				<th style="font-size:10px;">{{$nueve}}</th>
-				<th style="font-size:10px;">{{$ocho}}</th>
-				<th style="font-size:10px;">{{$siete}}</th>
-				<th style="font-size:10px;">{{$seis}}</th>
-				<th style="font-size:10px;">{{$cinco}}</th>
-				<th style="font-size:10px;">{{$cuatro}}</th>
-				<th style="font-size:10px;">{{$tres}}</th>
-				<th style="font-size:10px;">{{$dos}}</th>
-				<th style="font-size:10px;">{{$uno}}</th>
-				<th style="font-size:10px;">{{$presente}}</th>
+				<th style="font-size:10px;" nowrap>{{$doce}}</th>
+				<th style="font-size:10px;" nowrap>{{$once}}</th>
+				<th style="font-size:10px;" nowrap>{{$diez}}</th>
+				<th style="font-size:10px;" nowrap>{{$nueve}}</th>
+				<th style="font-size:10px;" nowrap>{{$ocho}}</th>
+				<th style="font-size:10px;" nowrap>{{$siete}}</th>
+				<th style="font-size:10px;" nowrap>{{$seis}}</th>
+				<th style="font-size:10px;" nowrap>{{$cinco}}</th>
+				<th style="font-size:10px;" nowrap>{{$cuatro}}</th>
+				<th style="font-size:10px;" nowrap>{{$tres}}</th>
+				<th style="font-size:10px;" nowrap>{{$dos}}</th>
+				<th style="font-size:10px;" nowrap>{{$uno}}</th>
+				<th style="font-size:10px;" nowrap>{{$presente}}</th>
 			</tr>
 			
 		</thead>			
