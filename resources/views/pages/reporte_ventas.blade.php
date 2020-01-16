@@ -44,14 +44,14 @@
 						-->
 						<td>
 							@for ($i = 0; $i < $clienteid->count(); $i++)
-							    @if($clienteid[$i]->mes == $once)
+							    @if($clienteid[$i]->mes == $doce)
 							    	${{number_format($clienteid[$i]->monto,0)}}
 							    @endif
 							@endfor
 						</td>
 						<td>
 							@for ($i = 0; $i < $clienteid->count(); $i++)
-							    @if($clienteid[$i]->mes == $doce)
+							    @if($clienteid[$i]->mes == $once)
 							    	${{number_format($clienteid[$i]->monto,0)}}
 							    @endif
 							@endfor
