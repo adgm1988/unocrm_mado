@@ -56,7 +56,7 @@
 						</div>
 						<div class="form-group col-md-6">
 							<label for="fecha">Monto:</label>
-							<input type="number" class="form-control" name="monto" value="">
+							<input type="number" class="form-control" step=".01" name="monto" value="">
 						</div>
 					</div>
 					<div class="row">
