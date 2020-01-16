@@ -78,8 +78,6 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::get('reportes','ReportsController@index');
 	Route::post('reportes/filtrar','ReportsController@filtrar');
 
-	Route::get('indicadores','IndicadoresController@index');
-	Route::post('indicadoresfiltro','IndicadoresController@filtro');
 
 
 
@@ -131,7 +129,10 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::get('/ventas/export', 'VentasController@export');
 
 
-		Route::get('reporteventas','ReporteVentasController@index');
+		//indicadores
+		Route::get('reporteventas','ReporteVentasController@index');	
+		Route::get('indicadores','IndicadoresController@index');
+		Route::post('indicadoresfiltro','IndicadoresController@filtro');
 	});
 
 

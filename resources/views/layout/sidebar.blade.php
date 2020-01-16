@@ -7,6 +7,27 @@
           <span>Tablero Prospectos</span>
         </a>
       </li>
+
+
+      @if(auth::user()->admin ==1 || auth::user()->consultor ==1)
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Tablero Consultor</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="pagesDropdown">
+            <a class="dropdown-item" href="/indicadores">Indicadores</a>
+            <a class="dropdown-item" href="/reporteventas">Ventas mensuales</a>
+        </div>
+      </li>
+      @endif
+
+
+
+
+
+
+
       @if(!auth::user()->vendedor ==1)
       <li class="nav-item">
         <a class="nav-link" href="/reporteventas">
