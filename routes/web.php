@@ -24,7 +24,6 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('','DashboardController@index')->middleware('auth');
 	Route::get('dashboard','DashboardController@index');
-	Route::get('reporteventas','ReporteVentasController@index');
 	Route::get('home',function(){
 		return redirect('/dashboard');
 	});
@@ -130,6 +129,9 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::get('/prospecto/export', 'ProspectoController@export');
 		Route::get('/actividades/export', 'ActividadController@export');
 		Route::get('/ventas/export', 'VentasController@export');
+
+
+		Route::get('reporteventas','ReporteVentasController@index');
 	});
 
 
