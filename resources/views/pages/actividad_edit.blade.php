@@ -95,12 +95,14 @@
 			<input type="text" class="form-control" name="descripcion" value="{{ $actividad->descripcion }}">
 		</div>
 	</div>
+	@if(auth::user()->admin ==1 || auth::user()->consultor ==1)
 	<div class="row">
 		<div class="form-group col-md-12">
 			<label for="resultado">Resultado:</label>
 			<input type="text" class="form-control" name="resultado" value="{{ $actividad->resultado }}">
 		</div>
 	</div>
+	@endif
 	<div class="row">
 		<div class="form-group col-md-12">
 			<button  class="btn btn-success" >Actualizar</button>

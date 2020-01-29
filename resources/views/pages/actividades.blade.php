@@ -119,12 +119,14 @@
 							<input type="text" class="form-control" name="descripcion">
 						</div>
 					</div>
+					@if(auth::user()->admin ==1 || auth::user()->consultor ==1)
 					<div class="row">
 						<div class="form-group col-md-12">
 							<label for="resultado">Resultado:</label>
 							<input type="text" class="form-control" name="resultado">
 						</div>
 					</div>
+					@endif
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
