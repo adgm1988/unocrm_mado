@@ -151,8 +151,11 @@
 				<th>Hora</th>
 				<th>Duración</th>
 				<th>Descripción</th>
+				<th>Realizada</th>
 				<th>Resultado</th>
 				<th>Responsable</th>
+				<th>Creado por</th>
+				<th>Editado por</th>
 			</tr>
 		</thead>
 		@foreach($actividades as $actividad)
@@ -168,9 +171,18 @@
 			<td nowrap>{{ $actividad->fecha }}</td>		
 			<td nowrap>{{ $actividad->hora }}</td>		
 			<td nowrap>{{ $actividad->duracion }}</td>		
-			<td>{{ $actividad->descripcion }}</td>		
+			<td>{{ $actividad->descripcion }}</td>
+			<td>
+				@if($actividad->realizada)
+				&#10004
+				@else
+				&#x274C
+				@endif
+			</td>		
 			<td>{{ $actividad->resultado }}</td>
 			<td>{{ $actividad->prospecto->user->name }}</td>
+			<td>{{ $actividad->creadopor->name}} ({{$actividad->created_at}})</td>
+			<td>{{ $actividad->editadopor->name}} ({{$actividad->updated_at}})</td>
 		</tr>
 		@endforeach
 	</table>
