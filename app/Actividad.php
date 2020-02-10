@@ -16,6 +16,14 @@ class Actividad extends Model
     	return $this->belongsTo('App\Prospecto','_prospectoid');
     }
 
+    public function creadopor(){
+        return $this->belongsTo('App\User','created_by');
+    }
+
+    public function editadopor(){
+        return $this->belongsTo('App\User','edited_by');
+    }
+
     public function getColorAttribute(){
     	
     	
