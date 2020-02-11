@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Venta;
 use App\Prospecto;
+use App\Actividad;
 use Illuminate\Support\Facades\Auth;
 
 use Carbon\Carbon;
@@ -46,6 +47,21 @@ class VentasController extends Controller
     	$venta->detalle = $request->get('detalle');
 
         $venta->save();
+
+        $actividad = new Actividad;
+        $actividad->_prospectoid = $request->get('prospecto');
+        $actividad->_tipoactid = 6;
+        $actividad->fecha = $request->get('fecha');
+        $actividad->hora = "00:00";
+        $actividad->duracion = "00:00";
+        $actividad->descripcion = $request->get('detalle');
+        $actividad->resultado = $request->get('monto')."--".$request->get('resultado');
+        $actividad->realizada = isset($request->realizada) ? 1 : 0;
+        $actividad->created_by = auth::user()->id;
+        $actividad->edited_by = auth::user()->id;
+
+        $actividad->save();
+
     	return redirect('ventas');
 
     }
