@@ -452,6 +452,24 @@ class ProspectoController extends Controller
 
         $bitacora->save();
 
+
+        $actividad = new Actividad;
+        $actividad->_prospectoid = $prospecto->id;
+        $actividad->_tipoactid = 7;
+        $actividad->fecha = Carbon::now();
+        $actividad->hora = "00:00";
+        $actividad->duracion = "00:00";
+        $actividad->descripcion = "Cambio de etapa de ".$request->get('etapa_anterior_id')." a ".$request->get('etapa');
+        $actividad->resultado = "Cambio de etapa de ".$request->get('etapa_anterior_id')." a ".$request->get('etapa');
+        $actividad->realizada = 1;
+        $actividad->created_by = auth::user()->id;
+        $actividad->edited_by = auth::user()->id;
+
+        $actividad->save();
+
+
+
+
          return redirect('/prospectos/'.$id);
     }
 
