@@ -55,7 +55,7 @@ class VentasController extends Controller
         $actividad->hora = "00:00";
         $actividad->duracion = "00:00";
         $actividad->descripcion = $request->get('detalle');
-        $actividad->resultado = "$".$request->get('monto')." -- ".$request->get('resultado');
+        $actividad->resultado = "$".$request->get('monto')." -- ".$request->get('detalle');
         $actividad->realizada = 1;
         $actividad->created_by = auth::user()->id;
         $actividad->edited_by = auth::user()->id;
