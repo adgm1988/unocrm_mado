@@ -152,7 +152,7 @@
 				<th>Duración</th>
 				<th>Descripción</th>
 				<th>Realizada</th>
-				<th>Resultado</th>
+				<th>Comentarios</th>
 				<th>Responsable</th>
 				<th>Creado por</th>
 				<th>Editado por</th>
