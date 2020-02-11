@@ -172,6 +172,7 @@
                 <th>Industria</th>
                 <th>Valor</th>								
                 <th>Responsable</th>				
+                <th>Creación</th>                
             </tr>
         </thead>
         @if(is_null($prospectos))
@@ -197,6 +198,7 @@
                 <td>{{ $prospecto->industrias->industria }}</td>		
                 <td>${{ number_format($prospecto->valor,2,".",",") }}</td>		
                 <td>{{ $prospecto->user->name }}</td>	
+                <td>{{ $prospecto->created_at }}</td>   
             </tr>
             @endforeach
         @endif
