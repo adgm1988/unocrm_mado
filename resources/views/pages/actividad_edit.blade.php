@@ -95,6 +95,16 @@
 			<input type="text" class="form-control" name="descripcion" value="{{ $actividad->descripcion }}">
 		</div>
 	</div>
+	<div class="row">
+		<div class="form-group col-md-12">
+			<div class="form-check">
+				<input class="form-check-input" type="checkbox" {{ $actividad->realizada == 1 ? "checked" : "" }} name="realizada" id="realizada">
+			  	<label class="form-check-label" for="realizada">
+			    Realizada
+			  	</label>
+			</div>
+		</div>
+	</div>
 	@if(auth::user()->admin ==1 || auth::user()->consultor ==1)
 	<div class="row">
 		<div class="form-group col-md-12">
