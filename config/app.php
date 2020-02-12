@@ -68,7 +68,6 @@ return [
     */
 
     'timezone' => 'America/Monterrey',
-
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
