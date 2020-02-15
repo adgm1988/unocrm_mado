@@ -17,6 +17,7 @@ $factory->define(Actividad::class, function (Faker $faker) {
         'descripcion'=> $faker->sentence(6,true),
         'created_by'=> $faker->numberBetween(1,4),
         'edited_by'=> $faker->numberBetween(1,4),
+        'realizada'=> $faker->numberBetween(0,1),
         'resultado'=> $faker->sentence(9,true)
     ];
 });
