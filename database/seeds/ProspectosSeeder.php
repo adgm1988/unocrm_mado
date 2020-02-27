@@ -12,6 +12,6 @@ class ProspectosSeeder extends Seeder
      */
     public function run()
     {
-         factory(Prospecto::class,100)->create();
+         factory(Prospecto::class,50)->create();
     }
 }

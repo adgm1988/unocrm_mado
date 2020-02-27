@@ -20,5 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ActividadsSeeder::class);
         $this->call(IndustriesSeeder::class);
         $this->call(VentasSeeder::class);
+        $this->call(TipoproyectosSeeder::class);
+        $this->call(EstatusproyectosSeeder::class);
     }
 }

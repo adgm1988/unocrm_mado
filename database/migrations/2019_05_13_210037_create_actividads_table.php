@@ -22,6 +22,11 @@ class CreateActividadsTable extends Migration
             $table->string('duracion');
             $table->text('descripcion');
             $table->text('resultado')->nullable();
+            $table->unsignedBigInteger('created_by');
+            $table->foreign('created_by')->references('id')->on('users');
+            $table->unsignedBigInteger('edited_by');
+            $table->foreign('edited_by')->references('id')->on('users');
+            $table->boolean('realizada');
             $table->timestamps();
         });
     }

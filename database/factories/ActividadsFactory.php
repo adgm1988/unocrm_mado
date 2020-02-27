@@ -9,7 +9,7 @@ use App\Actividad;
 $factory->define(Actividad::class, function (Faker $faker) {
    
     return [
-        '_prospectoid'=> $faker->numberBetween(1,100),
+        '_prospectoid'=> $faker->numberBetween(1,50),
         '_tipoactid'=> $faker->numberBetween(1,4),
         'fecha'=> $faker->dateTimeThisYear(),
         'hora'=> str_pad($faker->numberBetween(0,23),2,0,STR_PAD_LEFT).":00",

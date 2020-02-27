@@ -13,7 +13,7 @@ class RechazoSeeder extends Seeder
      */
    public function run()
     {
-        $motivos = ['Precio','Competencia','Calidad','Otro'];
+        $motivos = ['Competencia','Forma de pago','Problema con entrega de muestras','No concursamos','Otro'];
         foreach ($motivos as $key => $motivo){
         	Rechazos::create([
         	'motivo'=>$motivo,

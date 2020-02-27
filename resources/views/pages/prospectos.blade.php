@@ -45,7 +45,7 @@
                     </div>
                     <div class="row">
                         <div class="form-group col-md-12">
-                            <label for="contacto">Contacto:</label>
+                            <label for="contacto">Contacto y puesto:</label>
                             <input type="text" class="form-control" name="contacto">
                         </div>
                     </div>
@@ -60,9 +60,16 @@
                         </div>
                     </div>
                     <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="involucrados">Involucrados:</label>
+                            <textarea class="form-control" name="involucrados" rows="3"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="form-group col-md-6">
                             <label for="procedencia">Procedencia:</label>
                             <select class="custom-select" name="procedencia">
+                                <option disabled selected value> -- </option>
                                 @foreach($procedencias as $procedencia)
                                 <option value='{{ $procedencia->id }}'>{{ $procedencia->procedencia }}</option>
                                 @endforeach
@@ -71,25 +78,59 @@
                         <div class="form-group col-md-6">
                             <label for="procedencia">Industria:</label>
                             <select class="custom-select" name="industria">
+                                <option disabled selected value> -- </option>
                                 @foreach($industrias as $industria)
                                 <option value='{{ $industria->id }}'>{{ $industria->industria }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        
                     </div>
                     <div class="row">
                         <div class="form-group col-md-6">
+                            <label for="procedencia">Tipo de proyecto:</label>
+                            <select class="custom-select" name="tipo_proyecto">
+                                <option disabled selected value> -- </option>
+                                @foreach($tiposproyecto as $tipos)
+                                <option value='{{ $tipos->id }}'>{{ $tipos->tipo }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="procedencia">Estatus de proyecto:</label>
+                            <select class="custom-select" name="estatus_proyecto">
+                                <option disabled selected value> -- </option>
+                                @foreach($estatusproyecto as $estatus)
+                                <option value='{{ $estatus->id }}'>{{ $estatus->estatus }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-12">
                             <label for="procedencia">Etapa:</label>
                             <select class="custom-select" name="etapa">
+                                <option disabled selected value> -- </option>
                                 @foreach($etapas as $etapa)
                                 <option value='{{ $etapa->id }}'>{{ $etapa->etapa }}</option>
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+                    <div class="row">
                         <div class="form-group col-md-6">
                             <label for="valor">Valor de oportunidad:</label>
                             <input type="number" step=".01" class="form-control" name="valor">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="fecha_estimada">Fecha estimada de cierre:</label>
+                            <input type="date"  class="form-control" name="fecha_estimada">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="form-group col-md-12">
+                            <label for="notas">Notas generales:</label>
+                            <textarea class="form-control" name="notas" rows="3"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -170,6 +211,8 @@
                 <th>Correo</th>
                 <th>Procedencia</th>
                 <th>Industria</th>
+                <th>Tipo proyecto</th>
+                <th>Estatus proyecto</th>
                 <th>Valor</th>								
                 <th>Responsable</th>				
                 <th>Creación</th>                
@@ -196,6 +239,8 @@
                 <td>{{ $prospecto->correo }}</td>		
                 <td>{{ $prospecto->procedencias->procedencia }}</td>		
                 <td>{{ $prospecto->industrias->industria }}</td>		
+                <td>{{ $prospecto->tipo_proyecto_rel->tipo }}</td>        
+                <td>{{ $prospecto->estatus_proyecto_rel->estatus }}</td>        
                 <td>${{ number_format($prospecto->valor,2,".",",") }}</td>		
                 <td>{{ $prospecto->user->name }}</td>	
                 <td>{{ $prospecto->created_at }}</td>   

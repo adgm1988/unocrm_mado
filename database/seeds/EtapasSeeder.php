@@ -13,7 +13,7 @@ class EtapasSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        $etapas = ['Prospecto','Contactado','Necesidad','Propuesta','Cierre'];
+        $etapas = ['Prospectos MB','Cotizacion MB','Cierre MB','Detenido MB','Prospectos COC','Cotizacion COC','Cierre COC','Detenido COC','Prospectos CUB','Cotizacion CUB','Cierre CUB','Detenido CUB'];
         foreach ($etapas as $key => $etapa){
         	Etapa::create([
         	'etapa'=>$etapa,

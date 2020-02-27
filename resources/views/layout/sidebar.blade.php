@@ -129,6 +129,8 @@
             <a class="dropdown-item" href="/procedencias">Procedencias</a>
             <a class="dropdown-item" href="/industrias">Industrias</a>
             <a class="dropdown-item" href="/motivos">Motivos rechazo</a>
+            <a class="dropdown-item" href="/tipoproyectos">Tipos de proyecto</a>
+            <a class="dropdown-item" href="/estatusproyectos">Estatus de proyecto</a>
           @endif
 
         </div>

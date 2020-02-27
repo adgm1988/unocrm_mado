@@ -13,7 +13,7 @@ class IndustriesSeeder extends Seeder
     public function run()
     {
         //
-        $industrias = ['Construcción','Restaurantes','Servicios','Hotelera','Residencial'];
+        $industrias = ['Constructora','Despacho Arquitecto', 'Empresa','Gerencia de obra','Inversionista','Desarrolladora','Cliente final','Contratista'];
         foreach ($industrias as $key => $industria){
         	Industry::create([
         	'industria'=>$industria,

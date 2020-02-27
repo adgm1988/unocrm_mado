@@ -21,6 +21,14 @@ class Prospecto extends Model
 		return $this->belongsTo('App\Etapa','etapa_id');
 	}
 
+	public function tipo_proyecto_rel(){
+		return $this->belongsTo('App\Tipoproyecto','tipo_proyecto');
+	}
+
+	public function estatus_proyecto_rel(){
+		return $this->belongsTo('App\Estatusproyecto','estatus_proyecto');
+	}
+
 	public function user(){
 		return $this->belongsTo('App\User','userid');
 	}

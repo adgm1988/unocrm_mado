@@ -104,6 +104,14 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::post('/procedencia','ProcedenciaController@store');
 		Route::get('procedencias/delete/{id}','ProcedenciaController@destroy');
 
+		Route::get('tipoproyectos','TipoproyectosController@index');
+		Route::post('tipoproyectos','TipoproyectosController@store');
+		Route::get('tipoproyectos/delete/{id}','TipoproyectosController@destroy');
+
+		Route::get('estatusproyectos','EstatusproyectosController@index');
+		Route::post('estatusproyectos','EstatusproyectosController@store');
+		Route::get('estatusproyectos/delete/{id}','EstatusproyectosController@destroy');
+
 		Route::get('/industrias','IndustryController@index');
 		Route::post('/industria','IndustryController@store');
 		Route::get('industrias/delete/{id}','IndustryController@destroy');

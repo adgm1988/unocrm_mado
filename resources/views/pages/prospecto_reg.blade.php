@@ -221,8 +221,7 @@
 		{{ $prospecto->empresa }}
 		@if($prospecto->estatus!='prospecto')
 			<span style="color:gray;">({{ ucfirst($prospecto->estatus) }})</span>
-		@endif 
-		
+		@endif 		
 		<span style="float:right;">
 			<a href="/prospectos/{{ $prospecto->id }}/form">
 				<button type="button" class="btn btn-info p-1 btn-sm mr-3">Editar prospecto</button>
@@ -243,10 +242,15 @@
 					</div>
 					<div class="col-md-4"><span class="font-weight-bold">Procedencia:</span> {{ $prospecto->procedencias->procedencia }}</div>
 				</div>
-				<div class="row">
+				<div class="row mb-3">
 					<div class="col-md-4"><span class="font-weight-bold">Telefono:</span> {{ $prospecto->telefono }}</div>
 					<div class="col-md-4"><span class="font-weight-bold">Correo: </span>{{ $prospecto->correo }}</div>
 					<div class="col-md-4"><span class="font-weight-bold">Valor: </span>$ {{ number_format($prospecto->valor,2,".",",") }}</div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-md-4"><span class="font-weight-bold">Tipo de proyecto:</span> {{ $prospecto->tipo_proyecto_rel->tipo }}</div>
+					<div class="col-md-4"><span class="font-weight-bold">Estatus de proyecto:</span> {{ $prospecto->estatus_proyecto_rel->estatus }}</div>
+					<div class="col-md-4"><span class="font-weight-bold">Fecha estimada de cierre:</span> {{ $prospecto->fecha_estimada }}</div>
 				</div>
 			</p>
 		</div>
