@@ -12,7 +12,6 @@ class QuotesController extends Controller
             'fecha'=>'required',
             'monto'=>'required',
             'name'=>'required',
-            'archivo'=>'required',
             'descripcion'=>'required',
 
         ]);
