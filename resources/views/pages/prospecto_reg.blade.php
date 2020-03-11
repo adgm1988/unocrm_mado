@@ -214,7 +214,7 @@
 	</div>
 </form>
 
-<form method="post" action="{{url('/prospecto/'.$prospecto->id.'/cotizacion')}}" id="form">
+<form method="post" enctype="multipart/form-data" action="{{url('/prospecto/'.$prospecto->id.'/cotizacion')}}" id="form">
 	@csrf
 
 	<!-- Modal agregar -->
