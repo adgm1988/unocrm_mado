@@ -455,19 +455,7 @@
 						<th>Archivo</th>
 					</tr>
 				</thead>
-				<!--
-				@foreach($prospecto->cotizaciones as $venta)
-				<tr>
-					<td nowrap>
-						<a href="/venta/{{ $venta->id }}/form/prospecto"><i class="far fa-edit"></i></a>&nbsp;
-						<a onclick="return confirm('¿Estas seguro de querer eliminar esta venta?')" href="cotizaciones/delete/{{ $venta->id }}/prospecto"><i class="far fa-trash-alt"></i></a>
-					</td>			
-					<td nowrap>{{ $venta->fecha }}</td>
-					<td>${{ number_format($venta->monto,2,".",",") }}</td>
-					<td>{{ $venta->detalle }}</td>
-				</tr>
-				@endforeach
-				-->
+				<!--AQUI HAY QUE COPIAR EL BODY DE LAS OTRAS TABLAS PERO LO QUITE PARA EL DEMO--->
 			</table>
 		</div>
 	</div>
