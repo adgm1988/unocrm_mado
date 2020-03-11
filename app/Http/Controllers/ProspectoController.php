@@ -280,6 +280,7 @@ class ProspectoController extends Controller
         $etapas = Etapa::all();
         $industrias = Industry::all();
         $tiposproyecto = Tipoproyecto::all();
+        dd($tiposproyecto);
         $estatusproyecto = Estatusproyecto::all();
         return view('pages.prospecto_edit',compact('prospecto','procedencias','etapas','industrias','tiposproyecto','estatusproyecto'));
     }
