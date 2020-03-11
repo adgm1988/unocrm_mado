@@ -107,7 +107,7 @@
 		</div>
 		<div class="form-group col-md-4">
 			<label for="fecha_estimada">Fecha estimada de cierre:</label>
-			<input type="date" class="form-control" name="fecha_estimada" value="{{ $prospecto->valor }}">
+			<input type="date" class="form-control" name="fecha_estimada" value="{{ $prospecto->fecha_estimada }}">
 		</div>
 	</div>
 	<div class="row">
