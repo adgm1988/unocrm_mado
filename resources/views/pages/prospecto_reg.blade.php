@@ -232,21 +232,24 @@
 				<div class="modal-body">
 					
 					<div class="row">
-						<div class="form-group col-md-6">
+						<div class="form-group col-md-12">
 							<label for="name">Nombre:</label>
 							<input type="text" class="form-control" name="name">
 						</div>
+						
+					</div>
+					<div class="row">
 						<div class="form-group col-md-6">
 							<label for="fecha">Monto:</label>
 							<input type="number" class="form-control" step=".01" name="monto" value="">
 						</div>
-					</div>
-					<div class="row">
 						<div class="form-group col-md-6">
 							<label for="fecha">Fecha:</label>
 							<input type="date" class="form-control" name="fecha" value="{{ date('Y-m-d') }}">
 						</div>
-						<div class="form-group col-md-6">
+					</div>
+					<div class="row">
+						<div class="form-group col-md-12">
 							<label for="detalle">Archivo:</label>
 							<input type="file" name="archivo" id="archivo">
 						</div>
