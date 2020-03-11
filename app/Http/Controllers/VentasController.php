@@ -50,7 +50,7 @@ class VentasController extends Controller
 
         $actividad = new Actividad;
         $actividad->_prospectoid = $request->get('prospecto');
-        $actividad->_tipoactid = 6;
+        $actividad->_tipoactid = 5;
         $actividad->fecha = $request->get('fecha');
         $actividad->hora = "00:00";
         $actividad->duracion = "00:00";
