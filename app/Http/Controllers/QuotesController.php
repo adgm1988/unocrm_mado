@@ -19,6 +19,7 @@ class QuotesController extends Controller
 
         $quote = new Quote;
         $quote->prospecto_id = $id;
+        $quote->name = $request->get('name');
         $quote->fecha = $request->get('fecha');
         $quote->monto = $request->get('monto');
         $quote->descripcion = $request->get('descripcion');
