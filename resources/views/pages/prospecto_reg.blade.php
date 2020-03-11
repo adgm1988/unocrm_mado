@@ -330,6 +330,7 @@
 						<th>Días</th>
 						<th>Nota</th>
 						<th>Usuario</th>
+						<th>Creación</th>
 					</tr>
 				</thead>
 				@foreach($prospecto->bitacoras as $bitacora)
@@ -340,6 +341,7 @@
 					<td>{{ $bitacora->dias }}</td>
 					<td>{{ $bitacora->nota }}</td>
 					<td>{{ $bitacora->user->name }}</td>
+					<td>{{ $bitacora->created_at }}</td>
 				</tr>
 				@endforeach
 			</table>
