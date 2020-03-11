@@ -113,7 +113,7 @@
 	<div class="row">
 		<div class="form-group col-md-6">
 			<label for="notas">Involucrados</label>
-			<textarea class="form-control" name="notas" rows="3">{{$prospecto->involucrados}}</textarea>
+			<textarea class="form-control" name="involucrados" rows="3">{{$prospecto->involucrados}}</textarea>
 		</div>
 		<div class="form-group col-md-6">
 			<label for="notas">Notas</label>
