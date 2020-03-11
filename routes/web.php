@@ -57,6 +57,7 @@ Route::group(['middleware' => ['auth']], function () {
 
 	Route::get('prospectos/ventas/delete/{id}/{prospecto?}','ProspectoController@destroyventa');
 	Route::post('prospecto/{id}/venta','VentasController@storeprosp');
+	Route::post('prospecto/{id}/cotizacion','QuotesController@storeprosp');
 
 	Route::get('actividades','ActividadController@index');
 	Route::post('actividades','ActividadController@store');

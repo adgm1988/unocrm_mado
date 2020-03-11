@@ -256,8 +256,8 @@
 					</div>
 					<div class="row">
 						<div class="form-group col-md-12">
-							<label for="detalle">Descripcion:</label>
-							<textarea class="form-control" rows="5" id="detalle" name="detalle"></textarea>
+							<label for="descripcion">Descripcion:</label>
+							<textarea class="form-control" rows="5" id="detalle" name="descripcion"></textarea>
 						</div>
 					</div>
 					
