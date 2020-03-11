@@ -470,7 +470,7 @@
 					<td nowrap>{{ $quote->fecha }}</td>
 					<td>${{ number_format($quote->monto,2,".",",") }}</td>
 					<td>{{ $quote->descripcion }}</td>
-					<td><a href="<?php echo asset("storage/$quote->ruta_archivo")?>">Abrir</a></td>
+					<td><a target="_blank" href="<?php echo asset("storage/$quote->ruta_archivo")?>">Abrir</a></td>
 				</tr>
 				@endforeach
 			</table>
