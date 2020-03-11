@@ -28,8 +28,6 @@ class QuotesController extends Controller
 
         $path = $request->file('archivo')->store('quotes');
 
-        dd($path);
-
         $quote->ruta_archivo = $path;
 
         $quote->save();
