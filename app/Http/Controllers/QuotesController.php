@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class QuotesController extends Controller
 {
     function storeprosp($id, Request $request){
-
+    	dd($request);
         $validated= $request->validate([
             'fecha'=>'required',
             'monto'=>'required',
