@@ -350,11 +350,14 @@
 			<table class="table table-hover">
 				<thead>
 					<tr>
+						<!--- ESTO ERA PARA QUE SOLO APAREZCA CUANDO ES CLENTE"
 						<th>
 							@if($prospecto->estatus=='cliente')
 								<button type="button" class="btn btn-info p-1 btn-sm" data-toggle="modal" data-target="#modalventa" id="open">Agregar</button>
 							@endif
 						</th>
+						--->
+						<th><button type="button" class="btn btn-info p-1 btn-sm" data-toggle="modal" data-target="#modalventa" id="open">Agregar</button></th>
 						<th>Fecha</th>
 						<th>Monto</th>
 						<th>Detalle</th>
