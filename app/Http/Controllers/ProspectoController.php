@@ -189,6 +189,7 @@ class ProspectoController extends Controller
     	$prospecto->procedencia = $request->get('procedencia');
         $prospecto->industria = $request->get('industria');
         $prospecto->fecha_estimada = $request->get('fecha_estimada');
+        $prospecto->involucrados = $request->get('involucrados');
         $prospecto->tipo_proyecto = $request->get('tipo_proyecto');
         $prospecto->estatus_proyecto = $request->get('estatus_proyecto');
         $prospecto->notas = $request->get('notas');
