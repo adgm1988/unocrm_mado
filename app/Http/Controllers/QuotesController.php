@@ -24,6 +24,8 @@ class QuotesController extends Controller
         $quote->monto = $request->get('monto');
         $quote->descripcion = $request->get('descripcion');
 
+        dd($request);
+
         $path = $request->file('archivo')->store('quotes');
 
         $quote->ruta_archivo = $path;
