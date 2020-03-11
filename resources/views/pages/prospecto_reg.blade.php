@@ -248,14 +248,14 @@
 							<input type="date" class="form-control" name="fecha" value="{{ date('Y-m-d') }}">
 						</div>
 					</div>
-					<!--
+					
 					<div class="row">
 						<div class="form-group col-md-12">
 							<label for="detalle">Archivo:</label>
 							<input type="file" name="archivo" id="archivo">
 						</div>
 					</div>
-				-->
+				
 					<div class="row">
 						<div class="form-group col-md-12">
 							<label for="descripcion">Descripcion:</label>
