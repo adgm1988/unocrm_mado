@@ -464,7 +464,7 @@
 						<a href="/quote/{{ $quote->id }}/form/prospecto"><i class="far fa-edit"></i></a>&nbsp;
 						<a onclick="return confirm('¿Estas seguro de querer eliminar esta cotización?')" href="quotes/delete/{{ $quote->id }}/prospecto"><i class="far fa-trash-alt"></i></a>
 					</td>			
-					<td nowrap>{{ $quote->nombre }}</td>
+					<td nowrap>{{ $quote->name }}</td>
 					<td nowrap>{{ $quote->fecha }}</td>
 					<td>${{ number_format($quote->monto,2,".",",") }}</td>
 					<td>{{ $quote->descripcion }}</td>
