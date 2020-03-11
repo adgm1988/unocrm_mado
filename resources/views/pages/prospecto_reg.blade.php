@@ -214,6 +214,60 @@
 	</div>
 </form>
 
+<form method="post" action="{{url('/prospecto/'.$prospecto->id.'/cotizacion')}}" id="form">
+	@csrf
+
+	<!-- Modal agregar -->
+	<div class="modal" tabindex="-1" role="dialog" id="modalcotizacion">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="alert alert-danger" style="display:none"></div>
+				<div class="modal-header">
+
+					<h5 class="modal-title">Agregar cotizacion</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="name">Nombre:</label>
+							<input type="text" class="form-control" name="name">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="fecha">Monto:</label>
+							<input type="number" class="form-control" step=".01" name="monto" value="">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="fecha">Fecha:</label>
+							<input type="date" class="form-control" name="fecha" value="{{ date('Y-m-d') }}">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="detalle">Archivo:</label>
+							<input type="file" name="archivo" id="archivo">
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label for="detalle">Descripcion:</label>
+							<textarea class="form-control" rows="5" id="detalle" name="detalle"></textarea>
+						</div>
+					</div>
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button  class="btn btn-success" >Guardar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
 
 <div class="card mb-3">
 	<h5 class="card-header"> 
@@ -271,6 +325,8 @@
 
 				
 		<a class="nav-item nav-link" id="nav-ventas-tab" data-toggle="tab" href="#nav-ventas" role="tab" aria-controls="nav-ventas" aria-selected='false'>Ventas</a>
+
+		<a class="nav-item nav-link" id="nav-cotizaciones-tab" data-toggle="tab" href="#nav-cotizaciones" role="tab" aria-controls="nav-cotizaciones" aria-selected='false'>Cotizaciones</a>
 		
 	</div>
 </nav>
@@ -376,6 +432,42 @@
 					<td>{{ $venta->detalle }}</td>
 				</tr>
 				@endforeach
+			</table>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="nav-cotizaciones" role="tabpanel" aria-labelledby="nav-cotizaciones-tab">
+		<div class="table-sm table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<!--- ESTO ERA PARA QUE SOLO APAREZCA CUANDO ES CLENTE"
+						<th>
+							@if($prospecto->estatus=='cliente')
+								<button type="button" class="btn btn-info p-1 btn-sm" data-toggle="modal" data-target="#modalventa" id="open">Agregar</button>
+							@endif
+						</th>
+						--->
+						<th><button type="button" class="btn btn-info p-1 btn-sm" data-toggle="modal" data-target="#modalcotizacion" id="open">Agregar</button></th>
+						<th>Nombre</th>
+						<th>Fecha</th>
+						<th>Monto</th>
+						<th>Descripción</th>
+						<th>Archivo</th>
+					</tr>
+				</thead>
+				<!--
+				@foreach($prospecto->cotizaciones as $venta)
+				<tr>
+					<td nowrap>
+						<a href="/venta/{{ $venta->id }}/form/prospecto"><i class="far fa-edit"></i></a>&nbsp;
+						<a onclick="return confirm('¿Estas seguro de querer eliminar esta venta?')" href="cotizaciones/delete/{{ $venta->id }}/prospecto"><i class="far fa-trash-alt"></i></a>
+					</td>			
+					<td nowrap>{{ $venta->fecha }}</td>
+					<td>${{ number_format($venta->monto,2,".",",") }}</td>
+					<td>{{ $venta->detalle }}</td>
+				</tr>
+				@endforeach
+				-->
 			</table>
 		</div>
 	</div>
