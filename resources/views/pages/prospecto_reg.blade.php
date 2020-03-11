@@ -313,7 +313,7 @@
 					</td>		
 					<td>{{ $actividad->resultado }}</td>
 					<td>{{ $actividad->creadopor->name}} ({{$actividad->created_at}})</td>
-					<td>{{ $actividad->editadopor->name }} ({{$actividad->edited_at}})</td>
+					<td>{{ $actividad->editadopor->name }} ({{$actividad->updated_at}})</td>
 				</tr>
 				@endforeach
 			</table>
