@@ -83,7 +83,7 @@
 	        <select class="custom-select" name="tipo_proyecto">
 	            <option disabled selected value> -- </option>
 	            @foreach($tiposproyecto as $tipos)
-	            <option {{ $tipos->id === $prospecto->estatus_proyecto ? "selected" : "" }} value='{{ $tipos->id }}'>{{ $tipos->tipo }}</option>
+	            <option {{ $tipos->id === $prospecto->tipo_proyecto ? "selected" : "" }} value='{{ $tipos->id }}'>{{ $tipos->tipo }}</option>
 	            @endforeach
 	        </select>
 	    </div>
