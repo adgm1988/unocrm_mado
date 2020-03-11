@@ -472,7 +472,7 @@ class ProspectoController extends Controller
 
         $actividad = new Actividad;
         $actividad->_prospectoid = $prospecto->id;
-        $actividad->_tipoactid = 7;
+        $actividad->_tipoactid = 5;
         $actividad->fecha = Carbon::now();
         $actividad->hora = "00:00";
         $actividad->duracion = "00:00";
