@@ -29,6 +29,7 @@
 				<!--<th>Etapa anterior</th>-->
 				<th>Nota</th>
 				<th>Usuario</th>
+				<th>Creación</th>
 			</tr>
 		</thead>
 		@foreach($bitacoras as $bitacora)
@@ -40,6 +41,7 @@
 			<!--<td>{{ $bitacora->etapa_anterior ? $bitacora->etapa_anterior->etapa : "-" }}</td>-->
 			<td>{{ $bitacora->nota }}</td>
 			<td>{{ $bitacora->user->name }}</td>
+			<td>{{ $bitacora->created_at }}</td>
 		</tr>
 		@endforeach
 	</table>
