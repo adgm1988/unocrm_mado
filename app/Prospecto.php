@@ -45,6 +45,10 @@ class Prospecto extends Model
 		return $this->hasMany('App\Venta','_prospectoid')->orderBy('fecha', 'DESC');
 	}
 
+	public function quotes(){
+		return $this->hasMany('App\Quote','prospecto_id')->orderBy('fecha', 'DESC');
+	}
+
 	public function getNuevoAttribute(){
 		$dias_creacion = $this->created_at->diffInDays();
 
