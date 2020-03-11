@@ -23,6 +23,7 @@ class QuotesController extends Controller
         $quote->fecha = $request->get('fecha');
         $quote->monto = $request->get('monto');
         $quote->descripcion = $request->get('descripcion');
+        $quote->ruta_archivo = 'ejemplo.pdf';
 
         $quote->save();
 
