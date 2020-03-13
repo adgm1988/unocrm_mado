@@ -37,4 +37,16 @@ class QuotesController extends Controller
         return back();
 
     }
+
+    function destroy($id){
+        $quote = Quote::find($id);
+        $prospecto = $quote->prospecto->id;
+
+        $quote->delete();
+
+        return redirect('/prospectos/'.$prospecto_id);
+        
+
+        
+    }
 }
