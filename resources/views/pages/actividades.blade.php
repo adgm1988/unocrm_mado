@@ -183,7 +183,7 @@
 			</tr>
 		</thead>
 		@foreach($actividades as $actividad)
-		<tr>		
+		<tr class="actividad">		
 			<td nowrap>
 				<a href="/actividad/{{ $actividad->id }}/form"><i class="far fa-edit"></i></a>&nbsp;
 				@if(auth::user()->admin ==1 || auth::user()->consultor ==1)
