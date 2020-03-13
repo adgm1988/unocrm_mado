@@ -189,6 +189,7 @@
 				@if(auth::user()->admin ==1 || auth::user()->consultor ==1)
 				<a onclick="return confirm('¿Estas seguro de querer eliminar esta actividad?')" href="actividades/delete/{{ $actividad->id }}"><i class="far fa-trash-alt"></i></a>
 				@endif
+				<span style="display:none" class="usuario_id">{{$actividad->edited_by}}</span>
 			</td>
 			<td>{{ $actividad->prospecto->empresa ?? ''}}</td>		
 			<td nowrap>{{ $actividad->tiposdeact->tipo }}</td>		
