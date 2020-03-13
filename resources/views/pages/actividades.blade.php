@@ -225,7 +225,6 @@
 		var actividades = document.getElementsByClassName('actividad');
 		for(var i=0; i<actividades.length; i++){
 			var vendedor_id = actividades[i].getElementsByClassName('usuario_id')[0].textContent;
-			console.log("entre"+vendedor_id);
 			var filtro = vendedor_id;
 
 			if(filtro.includes(valor)){
