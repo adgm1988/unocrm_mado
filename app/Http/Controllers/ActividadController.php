@@ -7,6 +7,7 @@ use App\Actividad;
 use App\Tipoact;
 use App\Prospecto;
 use App\Bitacora;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 use Carbon\Carbon;
