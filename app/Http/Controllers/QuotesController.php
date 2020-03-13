@@ -27,6 +27,7 @@ class QuotesController extends Controller
         
 
         $path = $request->file('archivo')->store('public/quotes');
+        
         $path = str_replace("public/","",$path);
 
         $quote->ruta_archivo = $path;

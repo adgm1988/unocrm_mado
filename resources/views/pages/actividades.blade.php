@@ -3,11 +3,25 @@
 
 
 
-<button style="float:left;" type="button" class="btn btn-info btn-sm mb-2" data-toggle="modal" data-target="#modalactividad" id="open">Agregar</button>
-@if(auth::user()->admin ==1 || auth::user()->consultor ==1)
-    <a href="/actividades/export"><button style="float:left; margin-left:10px;" type="button" class="btn btn-info btn-sm" >Exportar</button></a>
-@endif
-<h3 class='text-center'>Agenda de actividades</h3>
+<div class="row">
+	<div class="col-md-2">
+		<button style="float:left;" type="button" class="btn btn-info btn-sm mb-2" data-toggle="modal" data-target="#modalactividad" id="open">Agregar</button>
+		@if(auth::user()->admin ==1 || auth::user()->consultor ==1)
+		    <a href="/actividades/export"><button style="float:left; margin-left:10px;" type="button" class="btn btn-info btn-sm" >Exportar</button></a>
+		@endif
+	</div>
+	<div class="col-md-3">
+		<select class="form-control" onchange="filtrar()" id="filtro">
+			<option value="0" default>Todos</option>
+			@foreach($vendedores as $vendedor)
+				<option value="{{$vendedor->id}}">{{$vendedor->name}}</option>
+			@endforeach
+		</select>
+	</div>
+	<div class="col-md-7">
+		<h3 class='text-left pl-5'>Agenda de actividades</h3>
+	</div>
+</div>
 
 
 @if ($errors->any())
@@ -198,4 +212,32 @@
 	</table>
 </div>
 
+
+<script>
+
+	var filtrar = function(){
+		var valor = document.getElementById('filtro').value;
+		console.log(valor);
+
+
+
+		var actividades = document.getElementsByClassName('actividad');
+		for(var i=0; i<actividades.length; i++){
+			var vendedor_id = actividades[i].getElementsByClassName('usuario_id')[0].textContent;
+			console.log("entre"+vendedor_id);
+			var filtro = vendedor_id;
+
+			if(filtro.includes(valor)){
+				actividades[i].style.display='table-row';
+			}else{
+				actividades[i].style.display='none';
+			}
+		}
+
+	}
+
+
+
+
+</script>
 @endsection

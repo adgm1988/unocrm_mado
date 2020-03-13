@@ -31,7 +31,8 @@ class ActividadController extends Controller
             $prospectos = Prospecto::all();
         }
     	$tipos = Tipoact::all();
-    	return view('pages.actividades',compact('actividades','tipos','prospectos'));
+        $vendedores = User::all();
+    	return view('pages.actividades',compact('actividades','tipos','prospectos','vendedores'));
     }
 
     function store(Request $request){
