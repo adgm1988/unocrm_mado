@@ -52,7 +52,7 @@ class Prospecto extends Model
 	public function getNuevoAttribute(){
 		$dias_creacion = $this->created_at->diffInDays();
 
-		if($dias_creacion > 0 && auth::user()->admin !=1  && auth::user()->consultor !=1){
+		if($dias_creacion > 0 && auth::user()->admin !=1  && auth::user()->consultor !=1 && auth::user()->director !=1){
 			return "disabled";
 		}else{
 			return "";
