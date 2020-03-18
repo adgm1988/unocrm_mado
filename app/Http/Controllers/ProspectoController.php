@@ -273,7 +273,7 @@ class ProspectoController extends Controller
     function form($id){
         $prospecto = Prospecto::find($id);
 
-        if(auth::user()->id != $prospecto->userid && (auth::user()->consultor!=1 || auth::user()->director!=1)  ){
+        if(auth::user()->id != $prospecto->userid && auth::user()->consultor!=1 && auth::user()->director!=1  ){
             return redirect('/prospectos');
         }
 
