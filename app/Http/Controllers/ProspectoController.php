@@ -274,6 +274,7 @@ class ProspectoController extends Controller
         $prospecto = Prospecto::find($id);
 
         if(auth::user()->id != $prospecto->userid && auth::user()->consultor!=1 && auth::user()->director!=1  ){
+            dd('edicion limitada');
             return redirect('/prospectos');
         }
 
