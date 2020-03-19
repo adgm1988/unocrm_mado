@@ -24,10 +24,13 @@ class CalendarController extends Controller
 
     	if(auth::user()->vendedor == 1){
            // $actividades = Actividad::orderBy('fecha', 'DESC')->get();
+            /** ESTO PARA QUE VEAN SOLO LOS SUYOS
             $actividades = Actividad::with('Prospecto')->whereHas('Prospecto', function($q){
                 $q->where('userid', auth::user()->id);
             })->get();
             //dd($actividades);
+            ESTE QUE SIGUE ES PARA QUE VEAN TODOS**/
+            $actividades = Actividades::all();
 
         }else{
             $actividades = Actividad::all();
