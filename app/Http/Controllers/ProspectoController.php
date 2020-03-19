@@ -221,7 +221,6 @@ class ProspectoController extends Controller
     {
 
         $validatedData = $request->validate([
-            'empresa' => 'required',
             'contacto' => 'required',
             'telefono' => 'required',
             'correo' => 'required',
