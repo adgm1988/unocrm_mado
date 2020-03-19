@@ -30,7 +30,7 @@ class CalendarController extends Controller
             })->get();
             //dd($actividades);
             ESTE QUE SIGUE ES PARA QUE VEAN TODOS**/
-            $actividades = Actividades::all();
+            $actividades = Actividad::all();
 
         }else{
             $actividades = Actividad::all();
