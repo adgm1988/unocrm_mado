@@ -26,10 +26,10 @@ class ProspectoController extends Controller
     //
 	function index(){
         if(auth::user()->vendedor == 1){
-            $prospectos = Prospecto::where('estatus','prospecto')->where('userid',auth::user()->id)->paginate(500);
+            $prospectos = Prospecto::where('estatus','prospecto')->where('userid',auth::user()->id)->orderBy('empresa')->paginate(500);
             $cant = Prospecto::where('estatus','prospecto')->where('userid',auth::user()->id)->count();
         }else{
-            $prospectos = Prospecto::where('estatus','prospecto')->paginate(500);
+            $prospectos = Prospecto::where('estatus','prospecto')->orderBy('empresa')->paginate(500);
             $cant = Prospecto::where('estatus','prospecto')->count();
         }
 		
