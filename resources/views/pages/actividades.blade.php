@@ -238,8 +238,6 @@
 		var desde = document.getElementById('desde').value+" 00:00:01";
 		var hasta = document.getElementById('hasta').value+" 23:59:59";
 
-		console.log(valor+"::"+desde+"::"+hasta);
-
 		var actividades = document.getElementsByClassName('actividad');
 		for(var i=0; i<actividades.length; i++){
 			var vendedor_id = actividades[i].getElementsByClassName('usuario_id')[0].textContent;
@@ -247,7 +245,7 @@
 
 			var filtro = vendedor_id;
 
-			if(filtro.includes(valor) && (desde < fecha_edicion) && (hasta > fecha_edicion) ){
+			if((filtro.includes(valor)||valor=='0') && (desde < fecha_edicion) && (hasta > fecha_edicion) ){
 				actividades[i].style.display='table-row';
 			}else{
 				actividades[i].style.display='none';
