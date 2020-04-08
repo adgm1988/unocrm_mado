@@ -4,7 +4,7 @@
 
 
 <button style="float:left;" type="button" class="btn btn-info btn-sm mb-2" data-toggle="modal" data-target="#modalactividad" id="open">Agregar</button>
-@if(auth::user()->admin ==1 || auth::user()->consultor ==1)
+@if(auth::user()->admin ==1 || auth::user()->consultor ==1 || auth::user()->director ==1)
     <a href="/ventas/export"><button style="float:left; margin-left:10px;" type="button" class="btn btn-info btn-sm" >Exportar</button></a>
 @endif
 <h3 class='text-center'>Listado de Ventas</h3>
