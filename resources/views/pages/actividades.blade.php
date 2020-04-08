@@ -10,20 +10,36 @@
 		    <a href="/actividades/export"><button style="float:left; margin-left:10px;" type="button" class="btn btn-info btn-sm" >Exportar</button></a>
 		@endif
 	</div>
+	<div class="col-md-7">
+		<h3 class='text-left pl-5'>Agenda de actividades</h3>
+	</div>
+</div>
+<div class="row">
 	<div class="col-md-3">
-		<select class="form-control" onchange="filtrar()" id="filtro">
+		<select class="form-control" id="filtro" onchange="check()">
 			<option value="0" default>Todos</option>
 			@foreach($vendedores as $vendedor)
 				<option value="{{$vendedor->id}}">{{$vendedor->name}}</option>
 			@endforeach
 		</select>
 	</div>
-	<div class="col-md-7">
-		<h3 class='text-left pl-5'>Agenda de actividades</h3>
+	<div class="col-md-1 text-right">
+		Desde:
+	</div>
+	<div class="col-md-2">
+		<input class="form-control" type="date" id="desde" onchange="check()">
+	</div>
+	<div class="col-md-1 text-right">
+		Hasta:
+	</div>
+	<div class="col-md-2">
+		<input class="form-control" type="date" id="hasta" onchange="check()">
+	</div>
+	<div class="col-md-3">
+		<button class="btn btn-success" disabled onclick="filtrar()" id="boton_filtro">Filtrar</button>
 	</div>
 </div>
-
-
+<br>
 @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -190,6 +206,7 @@
 				<a onclick="return confirm('¿Estas seguro de querer eliminar esta actividad?')" href="actividades/delete/{{ $actividad->id }}"><i class="far fa-trash-alt"></i></a>
 				@endif
 				<span style="display:none" class="usuario_id">{{$actividad->edited_by}}</span>
+				<span style="display:none" class="fecha_edicion">{{$actividad->updated_at}}</span>
 			</td>
 			<td>{{ $actividad->prospecto->empresa ?? ''}}</td>		
 			<td nowrap>{{ $actividad->tiposdeact->tipo }}</td>		
@@ -218,16 +235,19 @@
 
 	var filtrar = function(){
 		var valor = document.getElementById('filtro').value;
-		console.log(valor);
+		var desde = document.getElementById('desde').value+" 00:00:01";
+		var hasta = document.getElementById('hasta').value+" 23:59:59";
 
-
+		console.log(valor+"::"+desde+"::"+hasta);
 
 		var actividades = document.getElementsByClassName('actividad');
 		for(var i=0; i<actividades.length; i++){
 			var vendedor_id = actividades[i].getElementsByClassName('usuario_id')[0].textContent;
+			var fecha_edicion = actividades[i].getElementsByClassName('fecha_edicion')[0].textContent;
+
 			var filtro = vendedor_id;
 
-			if(filtro.includes(valor)){
+			if(filtro.includes(valor) && (desde < fecha_edicion) && (hasta > fecha_edicion) ){
 				actividades[i].style.display='table-row';
 			}else{
 				actividades[i].style.display='none';
@@ -235,6 +255,22 @@
 		}
 
 	}
+
+	var check = function(){
+		var button = document.getElementById('boton_filtro');
+		button.disabled = true;
+
+		var valor = document.getElementById('filtro').value;
+		var desde = document.getElementById('desde').value;
+		var hasta = document.getElementById('hasta').value;
+
+		if(valor && desde && hasta){
+			button.disabled = false;
+		}
+
+
+	}
+
 
 
 
