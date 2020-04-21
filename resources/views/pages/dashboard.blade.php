@@ -38,7 +38,12 @@
 		<input autocomplete="off" onkeyup="filtrar()" id="filtro" type="text" class="form-control form-control-sm" placeholder="Nombre de empresa o contacto..." name="valor">
 	</div>
 	<div class="col-md-2">
-		&nbsp;
+		<select name="producto" id="producto" class="form-control form-control-sm" onchange="filtrar_tipo()">
+			<option value="todos">Todos</option>
+			<option value="mb">MB</option>
+			<option value="coc">COC</option>
+			<option value="cub">CUB</option>
+		</select>
 	</div>
 	@if(auth::user()->vendedor ==1)
 	<div class="col-md-3">
@@ -69,7 +74,7 @@
 		</thead>
 		<tr style="background-color:lightgray;">			
 				@foreach($etapas as $etapa)
-				<td style="padding:3px; min-width:200px; max-width:200px; ">
+				<td class="{{$etapa->producto}} etapas" style="padding:3px; min-width:200px; max-width:200px; ">
 					 @if(is_null($prospectos))
 			                <tr>
 			                    <td colspan="10">No existen registros que mostrar </td>
@@ -134,6 +139,22 @@
 				tarjetas[i].style.display='block';
 			}else{
 				tarjetas[i].style.display='none';
+			}
+		}
+
+	}
+
+	var filtrar_tipo = function(){
+		var producto = document.getElementById('producto').value.toUpperCase();
+		var columnas = document.getElementsByClassName('etapas');
+		alert(producto);
+		if(producto=="TODOS"){
+			for(var i=0; i< columnas.length; i++){
+				columnas[i].style.display='block';
+			}
+		}else{
+			for(var i=0; i< columnas.length; i++){
+				columnas[i].style.display='none';
 			}
 		}
 

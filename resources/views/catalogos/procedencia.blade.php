@@ -26,7 +26,7 @@
 		<tr>
 			<td>
 				<a href="/procedencias/{{ $procedencia->id }}/form"><i class="far fa-edit"></i></a>&nbsp;
-				<a href="/procedencias/delete/{{ $procedencia->id }}"><i class="far fa-trash-alt"></i></a>
+				<!--<a href="/procedencias/delete/{{ $procedencia->id }}"><i class="far fa-trash-alt"></i></a>-->
 			</td>
 			<td>{{ $procedencia->procedencia }}</td>
 			<td>{{ $procedencia->orden }}</td>
