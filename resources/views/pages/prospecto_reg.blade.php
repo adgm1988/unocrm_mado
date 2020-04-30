@@ -299,17 +299,21 @@
 							</button>
 
 					</div>
-					<div class="col-md-4"><span class="font-weight-bold">Procedencia:</span> {{ $prospecto->procedencias->procedencia }}</div>
+					<div class="col-md-4"><span class="font-weight-bold">Valor: </span>$ {{ number_format($prospecto->valor,2,".",",") }}</div>
 				</div>
 				<div class="row mb-3">
 					<div class="col-md-4"><span class="font-weight-bold">Telefono:</span> {{ $prospecto->telefono }}</div>
 					<div class="col-md-4"><span class="font-weight-bold">Correo: </span>{{ $prospecto->correo }}</div>
-					<div class="col-md-4"><span class="font-weight-bold">Valor: </span>$ {{ number_format($prospecto->valor,2,".",",") }}</div>
+					<div class="col-md-4"><span class="font-weight-bold">Procedencia:</span> {{ $prospecto->procedencias->procedencia }}</div>
+				</div>
+				<div class="row mb-3">
+					<div class="col-md-4"><span class="font-weight-bold">Industria:</span> {{ $prospecto->industrias->industria }}</div>
+					<div class="col-md-4"><span class="font-weight-bold">Producto:</span> {{ $prospecto->producto->producto }}</div>
+					<div class="col-md-4"><span class="font-weight-bold">Fecha estimada de cierre:</span> {{ $prospecto->fecha_estimada }}</div>
 				</div>
 				<div class="row mb-3">
 					<div class="col-md-4"><span class="font-weight-bold">Tipo de proyecto:</span> {{ $prospecto->tipo_proyecto_rel->tipo }}</div>
 					<div class="col-md-4"><span class="font-weight-bold">Estatus de proyecto:</span> {{ $prospecto->estatus_proyecto_rel->estatus }}</div>
-					<div class="col-md-4"><span class="font-weight-bold">Fecha estimada de cierre:</span> {{ $prospecto->fecha_estimada }}</div>
 				</div>
 				<div class="row mb-3">
 					<div class="col-md-6"><span class="font-weight-bold">Involucrados:</span><br> {{ $prospecto->involucrados }}</div>

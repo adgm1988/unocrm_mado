@@ -96,11 +96,11 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="procedencia">Estatus de proyecto:</label>
-                            <select class="custom-select" name="estatus_proyecto">
+                            <label for="procedencia">Producto:</label>
+                            <select class="custom-select" name="producto">
                                 <option disabled selected value> -- </option>
-                                @foreach($estatusproyecto as $estatus)
-                                <option value='{{ $estatus->id }}'>{{ $estatus->estatus }}</option>
+                                @foreach($productos as $producto)
+                                <option value='{{ $producto->id }}'>{{ $producto->producto }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -112,6 +112,15 @@
                                 <option disabled selected value> -- </option>
                                 @foreach($etapas as $etapa)
                                 <option value='{{ $etapa->id }}'>{{ $etapa->etapa }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="procedencia">Estatus de proyecto:</label>
+                            <select class="custom-select" name="estatus_proyecto">
+                                <option disabled selected value> -- </option>
+                                @foreach($estatusproyecto as $estatus)
+                                <option value='{{ $estatus->id }}'>{{ $estatus->estatus }}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -212,6 +221,7 @@
                 <th>Procedencia</th>
                 <th>Industria</th>
                 <th>Tipo proyecto</th>
+                <th>Producto</th>
                 <th>Estatus proyecto</th>
                 <th>Valor</th>								
                 <th>Responsable</th>				
@@ -240,6 +250,7 @@
                 <td>{{ $prospecto->procedencias->procedencia }}</td>		
                 <td>{{ $prospecto->industrias->industria }}</td>		
                 <td>{{ $prospecto->tipo_proyecto_rel->tipo }}</td>        
+                <td>{{ $prospecto->producto->producto }}</td>        
                 <td>{{ $prospecto->estatus_proyecto_rel->estatus }}</td>        
                 <td>${{ number_format($prospecto->valor,2,".",",") }}</td>		
                 <td>{{ $prospecto->user->name }}</td>	

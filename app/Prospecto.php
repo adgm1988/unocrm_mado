@@ -33,6 +33,10 @@ class Prospecto extends Model
 		return $this->belongsTo('App\User','userid');
 	}
 
+	public function producto(){
+		return $this->hasOne('App\Producto','id','_idproducto');
+	}
+
 	public function actividades(){
 		return $this->hasMany('App\Actividad','_prospectoid')->orderBy('fecha', 'DESC');
 	}

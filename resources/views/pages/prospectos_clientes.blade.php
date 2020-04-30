@@ -75,34 +75,44 @@
   <table class="table table-sm table-hover table-striped">
     <thead>
       <tr>
-        <th></th>
+                <th></th>
                 <th>Empresa</th>
+                <th>Etapa</th>
                 <th>Contacto</th>
                 <th>Teléfono</th>
                 <th>Correo</th>
                 <th>Procedencia</th>
                 <th>Industria</th>
+                <th>Tipo proyecto</th>
+                <th>Producto</th>
+                <th>Estatus proyecto</th>
                 <th>Valor</th>                
                 <th>Responsable</th>        
+                <th>Creación</th>       
             </tr>
         </thead>
         @foreach($prospectos as $prospecto)
         <tr style="border-left:10px solid {{ $prospecto->indicador }};">    
          <td nowrap>
-            <a href="/prospectos/{{ $prospecto->id }}"><i class="far fa-eye"></i></a>&nbsp;
-            <a href="/prospectos/{{ $prospecto->id }}/form"><i class="far fa-edit"></i></a>&nbsp;
-            @if( $prospecto->hijos < 1  )
-              <a onclick="return confirm('¿Estas seguro de querer eliminar este prospecto?')" href="/prospectos/delete/{{ $prospecto->id }}"><i class="far fa-trash-alt"></i></a>
-            @endif
-        </td>
-        <td nowrap><i style="font-size:10px; color:{{ $prospecto->semaforo }}" class="fas fa-circle"></i> {{ $prospecto->empresa }} </td>          
-        <td nowrap>{{ $prospecto->contacto }}</td>    
-        <td>{{ $prospecto->telefono }}</td>   
-        <td>{{ $prospecto->correo }}</td>   
-        <td>{{ $prospecto->procedencias->procedencia }}</td>    
-        <td>{{ $prospecto->industrias->industria }}</td>    
-        <td>${{ number_format($prospecto->valor,2,".",",") }}</td>    
-        <td>{{ $prospecto->user->name }}</td> 
+                    <a href="/prospectos/{{ $prospecto->id }}"><i class="far fa-eye"></i></a>&nbsp;
+                    <a href="/prospectos/{{ $prospecto->id }}/form"><i class="far fa-edit"></i></a>&nbsp;
+                    @if( $prospecto->hijos < 1  )
+                        <a onclick="return confirm('¿Estas seguro de querer eliminar este prospecto?')" href="/prospectos/delete/{{ $prospecto->id }}"><i class="far fa-trash-alt"></i></a>
+                    @endif
+                </td>
+                <td nowrap><i style="font-size:10px; color:{{ $prospecto->semaforo }}" class="fas fa-circle"></i> {{ $prospecto->empresa }} </td>      
+                <td> <div style="border-radius: 10px; font-weight:bold; text-align:center; width:200px; height:25px; border:1px solid black; background-color: {{ $prospecto->etapas->color }}">{{ $prospecto->etapas->etapa }} </div></td>
+                <td nowrap>{{ $prospecto->contacto }}</td>    
+                <td>{{ $prospecto->telefono }}</td>   
+                <td>{{ $prospecto->correo }}</td>   
+                <td>{{ $prospecto->procedencias->procedencia }}</td>    
+                <td>{{ $prospecto->industrias->industria }}</td>    
+                <td>{{ $prospecto->tipo_proyecto_rel->tipo }}</td>        
+                <td>{{ $prospecto->producto->producto }}</td>        
+                <td>{{ $prospecto->estatus_proyecto_rel->estatus }}</td>        
+                <td>${{ number_format($prospecto->valor,2,".",",") }}</td>    
+                <td>{{ $prospecto->user->name }}</td> 
+                <td>{{ $prospecto->created_at }}</td>   
     </tr>
     @endforeach
 </table>

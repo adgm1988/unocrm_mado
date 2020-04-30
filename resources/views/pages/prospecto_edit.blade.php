@@ -56,15 +56,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="form-group col-md-3">
-			<label for="procedencia">Procedencia:</label>
-			<select class="custom-select" name="procedencia">
-				@foreach($procedencias as $procedencia)
-				<option {{ $procedencia->id === $prospecto->procedencia ? "selected" : "" }} value='{{ $procedencia->id }}'>{{ $procedencia->procedencia }}</option>
-				@endforeach
-			</select>
-		</div>
-		<div class="form-group col-md-3">
+		<div class="form-group col-md-4">
 			<label for="procedencia">Industria:</label>
 			<select class="custom-select" name="industria">
 				@foreach($industrias as $industria)
@@ -72,7 +64,30 @@
 				@endforeach
 			</select>
 		</div>
-	    <div class="form-group col-md-3">
+		<div class="form-group col-md-4">
+			<label for="procedencia">Producto:</label>
+			<select class="custom-select" name="producto">
+				@foreach($productos as $producto)
+				<option {{ $producto->id === $prospecto->_idproducto ? "selected" : "" }} value='{{ $producto->id }}'>{{ $producto->producto }}</option>
+				@endforeach
+			</select>
+		</div>
+		<div class="form-group col-md-4">
+			<label for="fecha_estimada">Fecha estimada de cierre:</label>
+			<input type="date" class="form-control" name="fecha_estimada" value="{{ $prospecto->fecha_estimada }}">
+		</div>
+	</div>
+	<div class="row">
+		<div class="form-group col-md-4">
+			<label for="procedencia">Procedencia:</label>
+			<select class="custom-select" name="procedencia">
+				@foreach($procedencias as $procedencia)
+				<option {{ $procedencia->id === $prospecto->procedencia ? "selected" : "" }} value='{{ $procedencia->id }}'>{{ $procedencia->procedencia }}</option>
+				@endforeach
+			</select>
+		</div>
+		
+	    <div class="form-group col-md-4">
 	        <label for="procedencia">Tipo de proyecto:</label>
 	        <select class="custom-select" name="tipo_proyecto">
 	            <option disabled selected value> -- </option>
@@ -81,7 +96,7 @@
 	            @endforeach
 	        </select>
 	    </div>
-	    <div class="form-group col-md-3">
+	    <div class="form-group col-md-4">
 	        <label for="procedencia">Estatus de proyecto:</label>
 	        <select class="custom-select" name="estatus_proyecto">
 	            <option disabled selected value> -- </option>
@@ -105,10 +120,7 @@
 			<label for="valor">Valor de oportunidad:</label>
 			<input type="number" step=".01" class="form-control" name="valor" value="{{ $prospecto->valor }}">
 		</div>
-		<div class="form-group col-md-4">
-			<label for="fecha_estimada">Fecha estimada de cierre:</label>
-			<input type="date" class="form-control" name="fecha_estimada" value="{{ $prospecto->fecha_estimada }}">
-		</div>
+		
 	</div>
 	<div class="row">
 		<div class="form-group col-md-6">

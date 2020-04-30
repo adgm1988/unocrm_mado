@@ -15,6 +15,7 @@ use App\Rechazos;
 use App\Venta;
 use App\Tipoproyecto;
 use App\Estatusproyecto;
+use App\Producto;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,8 +40,9 @@ class ProspectoController extends Controller
         $estatusproyecto = Estatusproyecto::all();
         $etapas = Etapa::all();
         $industrias = Industry::all();
+        $productos = Producto::all();
         $filtro='';
-		return view('pages.prospectos',compact('prospectos','procedencias','etapas','industrias','filtro','cant','tiposproyecto','estatusproyecto'));
+		return view('pages.prospectos',compact('prospectos','procedencias','etapas','industrias','filtro','cant','tiposproyecto','estatusproyecto','productos'));
 	}
 
     function search(Request $request){
@@ -173,6 +175,8 @@ class ProspectoController extends Controller
 	        'procedencia' => 'required',
             'industria' => 'required',
             'tipo_proyecto' => 'required',
+            'producto' => 'required',
+            'producto' => 'required',
             'estatus_proyecto' => 'required',
 	        'valor' => 'required',
             'fecha_estimada' => 'required',
@@ -193,6 +197,8 @@ class ProspectoController extends Controller
         $prospecto->fecha_estimada = $request->get('fecha_estimada');
         $prospecto->involucrados = $request->get('involucrados');
         $prospecto->tipo_proyecto = $request->get('tipo_proyecto');
+        $prospecto->_idproducto = $request->get('producto');
+        $prospecto->_idproducto = $request->get('producto');
         $prospecto->estatus_proyecto = $request->get('estatus_proyecto');
         $prospecto->notas = $request->get('notas');
         $prospecto->etapa_id = $request->get('etapa');
@@ -225,6 +231,7 @@ class ProspectoController extends Controller
             'telefono' => 'required',
             'correo' => 'required',
             'procedencia' => 'required',
+            'producto' => 'required',
             'industria' => 'required',
             'valor' => 'required',
             'etapa' => 'required',
@@ -243,6 +250,7 @@ class ProspectoController extends Controller
         $prospecto->industria = $request->get('industria');
         $prospecto->fecha_estimada = $request->get('fecha_estimada');
         $prospecto->tipo_proyecto = $request->get('tipo_proyecto');
+        $prospecto->_idproducto = $request->get('producto');
         $prospecto->involucrados = $request->get('involucrados');
         $prospecto->estatus_proyecto = $request->get('estatus_proyecto');
         $prospecto->notas = $request->get('notas');
@@ -283,7 +291,8 @@ class ProspectoController extends Controller
         $industrias = Industry::all();
         $tiposproyecto = Tipoproyecto::all();
         $estatusproyecto = Estatusproyecto::all();
-        return view('pages.prospecto_edit',compact('prospecto','procedencias','etapas','industrias','tiposproyecto','estatusproyecto'));
+        $productos = Producto::all();
+        return view('pages.prospecto_edit',compact('prospecto','procedencias','etapas','industrias','tiposproyecto','estatusproyecto','productos'));
     }
 
     function perdido($id){
