@@ -116,6 +116,9 @@ Route::group(['middleware' => ['auth']], function () {
 		Route::post('estatusproyectos','EstatusproyectosController@store');
 		Route::get('estatusproyectos/delete/{id}','EstatusproyectosController@destroy');
 
+		Route::get('productos','ProductoController@index');
+		Route::post('productos','ProductoController@store');
+
 		Route::get('/industrias','IndustryController@index');
 		Route::post('/industria','IndustryController@store');
 		Route::get('industrias/delete/{id}','IndustryController@destroy');

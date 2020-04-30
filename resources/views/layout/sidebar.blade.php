@@ -131,6 +131,7 @@
             <a class="dropdown-item" href="/motivos">Motivos rechazo</a>
             <a class="dropdown-item" href="/tipoproyectos">Tipos de proyecto</a>
             <a class="dropdown-item" href="/estatusproyectos">Estatus de proyecto</a>
+            <a class="dropdown-item" href="/productos">Productos</a>
           @endif
 
         </div>
