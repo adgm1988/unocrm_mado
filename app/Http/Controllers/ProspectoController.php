@@ -258,7 +258,8 @@ class ProspectoController extends Controller
         $prospecto->etapa_id = $request->get('etapa');
         $prospecto->valor = $request->get('valor');
         $prospecto->estatus = $request->get('estatus');
-        $prospecto->userid = auth()->user()->id;
+        
+        //$prospecto->userid = auth()->user()->id;
 
         $prospecto->save();
 
@@ -309,7 +310,7 @@ class ProspectoController extends Controller
         ]);
         
         $prospecto->estatus = "perdido";
-        $prospecto->userid = auth()->user()->id;
+        //$prospecto->userid = auth()->user()->id;
         $prospecto->save();
 
         $bitacora_anterior = Bitacora::where('prospecto_id',$id)->latest()->first();
@@ -371,7 +372,8 @@ class ProspectoController extends Controller
         ]);
         
         $prospecto->estatus = "cliente";
-        $prospecto->userid = auth()->user()->id;
+        //$prospecto->userid = auth()->user()->id;
+
         $prospecto->save();
 
         $bitacora_anterior = Bitacora::where('prospecto_id',$id)->latest()->first();
