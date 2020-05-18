@@ -69,8 +69,6 @@
 				<div class="modal-body">
 					<div class="row">
 						<div class="form-group col-md-12">
-							
-
 							<label for="prospecto">Prospecto:</label>
 							<select class="custom-select" name="prospecto">
 								@foreach($prospectos as $prospecto)
@@ -79,6 +77,7 @@
 							</select>
 						</div>
 					</div>
+					
 					<div class="row">
 						<div class="form-group col-md-12">
 							<label for="actividad">Actividad:</label>

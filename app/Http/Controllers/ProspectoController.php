@@ -160,8 +160,9 @@ class ProspectoController extends Controller
         $tiposproyecto = Tipoproyecto::all();
         $estatusproyecto = Estatusproyecto::all();
         $industrias = Industry::all();
+        $productos = Producto::all();
         $filtro = ucfirst($campo)." ".$condicion_texto." ". $valor;
-        return view('pages.prospectos',compact('prospectos','procedencias','etapas','industrias','filtro','cant','tiposproyecto','estatusproyecto'));
+        return view('pages.prospectos',compact('prospectos','procedencias','etapas','industrias','filtro','cant','tiposproyecto','estatusproyecto','productos'));
     }
 
     function store(Request $request)
