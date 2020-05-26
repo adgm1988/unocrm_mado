@@ -273,6 +273,59 @@
 	</div>
 </form>
 
+<form method="post" enctype="multipart/form-data" action="{{url('/prospecto/'.$prospecto->id.'/convenio')}}" id="form">
+	@csrf
+
+	<!-- Modal agregar -->
+	<div class="modal" tabindex="-1" role="dialog" id="modalconvenio">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="alert alert-danger" style="display:none"></div>
+				<div class="modal-header">
+
+					<h5 class="modal-title">Agregar convenio</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					
+					<div class="row">
+						<div class="form-group col-md-6">
+							<label for="name">Nombre:</label>
+							<input type="text" class="form-control" name="name">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="fecha">Fecha:</label>
+							<input type="date" class="form-control" name="fecha" value="{{ date('Y-m-d') }}">
+						</div>
+						
+					</div>
+					<div class="row">
+
+						<div class="form-group col-md-12">
+							<label for="detalle">Archivo:</label>
+							<input type="file" name="archivo" id="archivo">
+						</div>
+					</div>
+				
+					<div class="row">
+						<div class="form-group col-md-12">
+							<label for="descripcion">Descripcion:</label>
+							<textarea class="form-control" rows="5" id="detalle" name="descripcion"></textarea>
+						</div>
+					</div>
+					
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+					<button  class="btn btn-success" >Guardar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
 
 <div class="card mb-3">
 	<h5 class="card-header"> 
@@ -336,6 +389,8 @@
 		<a class="nav-item nav-link" id="nav-ventas-tab" data-toggle="tab" href="#nav-ventas" role="tab" aria-controls="nav-ventas" aria-selected='false'>Ventas</a>
 
 		<a class="nav-item nav-link" id="nav-cotizaciones-tab" data-toggle="tab" href="#nav-cotizaciones" role="tab" aria-controls="nav-cotizaciones" aria-selected='false'>Cotizaciones</a>
+		
+		<a class="nav-item nav-link" id="nav-convenios-tab" data-toggle="tab" href="#nav-convenios" role="tab" aria-controls="nav-convenios" aria-selected='false'>Convenios</a>
 		
 	</div>
 </nav>
@@ -475,6 +530,35 @@
 					<td>${{ number_format($quote->monto,2,".",",") }}</td>
 					<td>{{ $quote->descripcion }}</td>
 					<td><a target="_blank" href="<?php echo asset("storage/$quote->ruta_archivo")?>">Abrir</a></td>
+				</tr>
+				@endforeach
+			</table>
+		</div>
+	</div>
+	<div class="tab-pane fade" id="nav-convenios" role="tabpanel" aria-labelledby="nav-convenios-tab">
+		<div class="table-sm table-responsive">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th><button type="button" class="btn btn-info p-1 btn-sm" data-toggle="modal" data-target="#modalconvenio" id="open">Agregar</button></th>
+						<th>Nombre</th>
+						<th>Fecha</th>
+						<th>Monto</th>
+						<th>Descripción</th>
+						<th>Archivo</th>
+					</tr>
+				</thead>
+				@foreach($prospecto->quotes as $quote)
+				<tr>
+					<td nowrap>
+						<a href="/convenio/{{ $convenio->id }}/form/prospecto"><i class="far fa-edit"></i></a>&nbsp;
+						<a onclick="return confirm('¿Estas seguro de querer eliminar este convenio?')" href="/convenio/delete/{{ $convenio->id }}"><i class="far fa-trash-alt"></i></a>
+					</td>			
+					<td nowrap>{{ $convenio->name }}</td>
+					<td nowrap>{{ $convenio->fecha }}</td>
+					<td>${{ number_format($convenio->monto,2,".",",") }}</td>
+					<td>{{ $convenio->descripcion }}</td>
+					<td><a target="_blank" href="<?php echo asset("storage/$convenio->ruta_archivo")?>">Abrir</a></td>
 				</tr>
 				@endforeach
 			</table>
