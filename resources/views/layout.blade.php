@@ -59,7 +59,6 @@
     <script src="{{ asset('js/sb-admin.min.js') }}" ></script>
     <!-- Demo scripts for this page-->
     <script src="{{ asset('js/demo/datatables-demo.js') }}" ></script>
-    <script src="{{ asset('js/demo/chart-area-demo.js') }}" ></script>
     
   </body>
 </html>
