@@ -37,12 +37,13 @@ class ConvenioController extends Controller
     }
 
     function destroy($id){
+
         $convenio = Convenio::find($id);
-        $prospecto = $convenio->prospecto->id;
+        
 
         $convenio->delete();
 
-        return redirect('/prospectos/'.$prospecto_id);
+        return redirect('/prospectos/'.$convenio->prospecto_id);
         
 
         
