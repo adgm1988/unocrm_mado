@@ -62,6 +62,9 @@ Route::group(['middleware' => ['auth']], function () {
 	Route::post('prospecto/{id}/cotizacion','QuotesController@storeprosp');
 	Route::post('quotes/delete/{id}','QuotesController@destroy');
 
+	Route::post('prospecto/{id}/convenio','ConvenioController@storeprosp');
+	Route::post('convenio/delete/{id}','ConvenioController@destroy');
+
 	Route::get('actividades','ActividadController@index');
 	Route::post('actividades','ActividadController@store');
 	Route::post('actividadescal','ActividadController@storecal');

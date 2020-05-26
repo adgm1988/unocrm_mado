@@ -548,7 +548,7 @@
 						<th>Archivo</th>
 					</tr>
 				</thead>
-				@foreach($prospecto->quotes as $quote)
+				@foreach($prospecto->convenios as $convenio)
 				<tr>
 					<td nowrap>
 						<a href="/convenio/{{ $convenio->id }}/form/prospecto"><i class="far fa-edit"></i></a>&nbsp;
