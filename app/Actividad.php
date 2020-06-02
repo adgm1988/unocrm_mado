@@ -26,7 +26,6 @@ class Actividad extends Model
 
     public function getColorAttribute(){
     	
-    	
     	if ($this->realizada != 1){
     		return $this->tiposdeact->color;
     	}else{
@@ -38,7 +37,7 @@ class Actividad extends Model
     public function getSemaforoAttribute(){
         $fecha = $this->fecha;
 
-        if($this->realizada != 1){
+        if($this->realizada == 1){
             return "#C4C4C4"; //gris
         }elseif($fecha < date('Y-m-d')){
             return "#FF0C00"; //rojo
