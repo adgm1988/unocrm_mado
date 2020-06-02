@@ -522,7 +522,7 @@
 				@foreach($prospecto->quotes as $quote)
 				<tr>
 					<td nowrap>
-						<a href="/quote/{{ $quote->id }}/form/prospecto"><i class="far fa-edit"></i></a>&nbsp;
+						<!--<a href="/quote/{{ $quote->id }}/form/prospecto"><i class="far fa-edit"></i></a>&nbsp;-->
 						<a onclick="return confirm('¿Estas seguro de querer eliminar esta cotización?')" href="/quotes/delete/{{ $quote->id }}"><i class="far fa-trash-alt"></i></a>
 					</td>			
 					<td nowrap>{{ $quote->name }}</td>
@@ -551,7 +551,7 @@
 				@foreach($prospecto->convenios as $convenio)
 				<tr>
 					<td nowrap>
-						<a href="/convenio/{{ $convenio->id }}/form/prospecto"><i class="far fa-edit"></i></a>&nbsp;
+						<!--<a href="/convenio/{{ $convenio->id }}/form/prospecto"><i class="far fa-edit"></i></a>&nbsp;-->
 						<a onclick="return confirm('¿Estas seguro de querer eliminar este convenio?')" href="/convenio/delete/{{ $convenio->id }}"><i class="far fa-trash-alt"></i></a>
 					</td>			
 					<td nowrap>{{ $convenio->name }}</td>
