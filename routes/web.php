@@ -19,6 +19,9 @@ Route::get('/demo',function(){
 Route::get('/time',function(){
 	return view('pages/time');
 });
+Route::get('ini',function(){
+	return view('pages/phpini');
+});
 
 
 
